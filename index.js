@@ -17,7 +17,7 @@ app.use("/api/v1/tasks", tasks);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 3001;
-app.get("/", function (request, response) {
+app.get("/api/", function (request, response) {
 
   response.json("🙋‍♂️, 🌏 🎊✨🤩!!!!!");
   
