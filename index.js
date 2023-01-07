@@ -6,13 +6,16 @@ require("dotenv").config();
 const notFound = require("./middleware/not-found");
 const errorHandlerMiddleware = require("./middleware/error-handler");
 //middleware
-app.use(express.static("./public"));
+// app.use(express.static("./public"));
 
 //mainly used to convert the front-end req to node understanding
 app.use(express.json());
 
 //routes
 app.use("/api/v1/tasks", tasks);
+app.get("/", function (request, response) {
+  response.send("🙋‍♂️, 🌏 🎊✨🤩!!!!!");
+});
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
