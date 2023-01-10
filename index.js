@@ -14,13 +14,13 @@ app.use(express.json());
 //routes
 app.use("/api/v1/tasks", tasks);
 app.get("/", function (request, response) {
-  response.send("🙋‍♂️, 🌏 🎊✨🤩!!!!!");
+  response.send(`🙋‍♂️, 🌏 🎊✨🤩!!!!!
+  <a href="/api/v1/tasks">to see tasks</a>`);
 });
 
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 const port = process.env.PORT || 3001;
-
 
 const start = async () => {
   try {
