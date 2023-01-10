@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 const tasks = require("./routes/task");
 const connectDB = require("./db/connect");
 require("dotenv").config();
@@ -8,6 +9,7 @@ const errorHandlerMiddleware = require("./middleware/error-handler");
 //middleware
 // app.use(express.static("./public"));
 
+app.use(cors());
 //mainly used to convert the front-end req to node understanding
 app.use(express.json());
 
